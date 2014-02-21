@@ -3,7 +3,9 @@
 	    [dj]
 	    [dj.io]))
 
-(dj/import-fn #'pom/add-dependencies)
+(defn add-dependencies [coordinates system]
+  (pom/add-dependencies :coordinates coordinates
+                        :repositories (:dj/repositories system)))
 
 (defn eval-project-form
   "convert defproject form into a hash-map"
