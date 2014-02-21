@@ -3,7 +3,13 @@
 	    [dj]
 	    [dj.io]))
 
-(defn add-dependencies [coordinates system]
+(defn add-dependencies
+  "like pomegranate's add-dependencies, supply leiningen style vector of dependency specifications, aka
+ [org.clojure/clojure \"1.5.1\"] ...
+
+system must have key :dj/repositories
+"
+  [coordinates system]
   (pom/add-dependencies :coordinates coordinates
                         :repositories (:dj/repositories system)))
 
