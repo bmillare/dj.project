@@ -5,4 +5,4 @@ dj dynamic utilities, load jars, load native jars, reload jars, and load project
 
 # Latest Version
 
-```[org.bmillare/dj.project "0.2.0"]```
+```[org.bmillare/dj.project "0.3.0"]```
