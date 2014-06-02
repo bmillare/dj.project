@@ -81,7 +81,7 @@ system must have key :dj/repositories
 	   (let [f (resolve-path (:name entry-obj) system)]
              (when-not (dj.io/exists? f)
 	       (throw (Exception. "git repository not found")))
-	     (resolve-project (dj.io/get-path f))))
+	     (resolve-project (dj.io/get-path f) system)))
 
 ;; i don't want to fully commit to "usr/src"
 ;; i'd like a verbose mode, where a map is passed
@@ -90,7 +90,7 @@ system must have key :dj/repositories
 		 f (if relative-path
 		     (resolve-path relative-path system)
 		     (dj.io/file (:root-path entry-obj)))]
-	     (resolve-project (dj.io/get-path f))))
+	     (resolve-project (dj.io/get-path f) system)))
 
 (defn project-source-dependencies* [system input:queue input:return input:visited]
   ((fn project-source-dependencies** [dependency:queue dependency:return dependency:visited]
