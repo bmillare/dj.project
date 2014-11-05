@@ -58,11 +58,9 @@
       read-string
       eval))
 
-(defn find-resource
-  (^java.io.File [relative-path]
-     (find-resource relative-path (second (pom/classloader-hierarchy))))
-  (^java.io.File [relative-path ^ClassLoader classloader]
-     (dj.io/file
-      (.getPath
-       (.getResource classloader
-		     relative-path)))))
+(defn find-resource [relative-path]
+  (-> relative-path
+      pom/resources
+      first
+      (.getPath)
+      dj.io/file))
