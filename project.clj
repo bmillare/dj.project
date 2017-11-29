@@ -1,4 +1,4 @@
-(defproject org.bmillare/dj.project "1.0.0"
+(defproject org.bmillare/dj.project "1.0.1"
   :description "dj dynamic utilities, load jars, load native jars, reload jars, and load projects via project.clj files on the fly"
   :url "https://github.com/bmillare/dj.project"
   :license {:name "Eclipse Public License"

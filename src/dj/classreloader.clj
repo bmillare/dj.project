@@ -1,4 +1,4 @@
-(ns dj.classloader
+(ns dj.classreloader
   (:import [java.net URISyntaxException])
   (:require [dj]
             [dj.repl]
@@ -105,7 +105,7 @@
 }
 catch (ClassNotFoundException IllegalArgumentException | SecurityException e)
 {
-    classlogger.log(Level.WARNING, "Error loading ".concat(props.getProperty("Class")), e);
+    classlogger.log(Level.WARNING, \"Error loading \".concat(props.getProperty(\"Class\")), e);
 }
 
   How to override classloader identification checks
@@ -127,7 +127,7 @@ private static Driver isLoaded(String drivername, String... classpath) throws Cl
         }
     });
     if (tdriver == null)
-        throw new java.lang.ClassNotFoundException(drivername + " not found.");
+        throw new java.lang.ClassNotFoundException(drivername + \" not found.\");
     return tdriver;
 }
   "
